@@ -1,0 +1,46 @@
+project:
+  type: website
+  output-dir: docs
+  render:
+    - index.qmd
+    - syllabus.qmd
+    - about.qmd
+    - homework/*.qmd
+    - slides/*.qmd
+    - reading/*.qmd
+    - papers/*.qmd
+    - "!archive"
+
+website:
+  title: "Stat 892/992: Special Topics in Data Visualization"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: syllabus.pdf
+        text: Syllabus
+      - href: about.qmd
+        text: About Stat 892/992
+  google-analytics: "G-50X9TBFCY9"
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+execute:
+  cache: true
+  freeze: auto  # re-render only when source changes
+
+
+title: "Stat 892/992: Special Topics in Data Visualization"
+instructor: Susan Vanderplas
+semester: Fall 2024
+
+email: "[susan.vanderplas@unl.edu](mailto:susan.vanderplas@unl.edu?subject=Stat%20850)"
+web: "srvanderplas.github.io"
+officehours: "\\href{https://calendly.com/drvanderplas/officehours}{Schedule here}"
+office: "Hardin 343D"
+classroom: "TBD"
+classhours: "TBD"

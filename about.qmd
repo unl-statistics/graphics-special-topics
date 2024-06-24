@@ -1,0 +1,5 @@
+---
+title: "About Stat 892/992 - Special Topics in Data Visualization"
+---
+
+{{< include course-objs.qmd >}}
