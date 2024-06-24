@@ -1,5 +1,6 @@
-
-library(tidyverse)
+library(dplyr)
+library(tibble)
+library(ggplot2)
 library(lubridate)
 
 # Create a calendar for your syllabus ----
