@@ -5,11 +5,6 @@ project:
     - index.qmd
     - syllabus.qmd
     - about.qmd
-    - homework/*.qmd
-    - slides/*.qmd
-    - reading/*.qmd
-    - papers/*.qmd
-    - "!archive"
 
 website:
   title: "Stat 892/992: Special Topics in Data Visualization"
