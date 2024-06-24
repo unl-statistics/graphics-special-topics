@@ -1,17 +1,17 @@
 ---
 title: "Stat 892/992: Special Topics in Data Visualization"
 format: html
-listing:
-  - id: hwlst
-    categories: true
-    contents: 
-      - "homework/*.qmd"
-      - "reading/*.qmd"
-      - "project/*.qmd" 
-      - "slides/*.qmd"
-    sort: "date desc"
-    type: table
-    fields: [date, image, title]
+# listing:
+#   - id: hwlst
+#     categories: true
+#     contents: 
+#       - "homework/*.qmd"
+#       - "reading/*.qmd"
+#       - "project/*.qmd" 
+#       - "slides/*.qmd"
+#     sort: "date desc"
+#     type: table
+#     fields: [date, image, title]
 ---
 
 # Course Materials
