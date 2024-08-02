@@ -58,6 +58,7 @@ jobs:
             any::rmarkdown
             any::downlit
             any::knitr
+            any::kableExtra
             any::skimr
             any::ggplot2
             any::ggthemes
