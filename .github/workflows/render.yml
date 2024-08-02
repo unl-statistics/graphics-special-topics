@@ -65,6 +65,7 @@ jobs:
             any::jsonlite
             any::yaml
             any::magrittr
+            any::forcats
             any::lubridate
             any::stringr
             any::dplyr
