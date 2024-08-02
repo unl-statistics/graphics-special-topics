@@ -24,6 +24,7 @@ jobs:
       # https://jasonraimondi.com/posts/install-google-fonts-in-github-workflow/
       - name: Install Google Fonts
         run: |
+          apt install fonts-noto-core
           mv deps/NotoSans* /usr/share/fonts/
           fc-cache -fv
 
