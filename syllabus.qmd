@@ -133,7 +133,7 @@ class_cal
 class_days %>% select(date, topic, time) %>%
   mutate(time = ifelse(is.na(time), "", time)) %>%
   mutate(date2 = format(date, "%b %e")) %>%
-  set_names(c("date", "Topic", "Time", "Date")) %>%
+  magrittr::set_names(c("date", "Topic", "Time", "Date")) %>%
   group_by(Topic, Time) %>%
   summarize(date = min(date), Date = paste(Date, sep = ",", collapse = ", ")) %>%
   arrange(date) %>%

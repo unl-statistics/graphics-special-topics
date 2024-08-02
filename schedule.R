@@ -3,6 +3,7 @@ library(tibble)
 library(ggplot2)
 library(lubridate)
 library(forcats)
+library(magrittr)
 
 # Create a calendar for your syllabus ----
 # Source: http://svmiller.com/blog/2020/08/a-ggplot-calendar-for-your-semester/
@@ -88,7 +89,7 @@ my_scales <- tribble(
   "Paper Due Date", "orange",
   "Finals",         "grey")
 
-fill_scale <- c(my_scales$fill) %>% set_names(my_scales$category)
+fill_scale <- c(my_scales$fill) %>% magrittr::set_names(my_scales$category)
 
 plot_Cal <-  Cal %>%
   left_join(my_scales) %>%

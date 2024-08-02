@@ -64,7 +64,7 @@ jobs:
             any::devtools
             any::jsonlite
             any::yaml
-            any::terra
+            any::magrittr
             any::lubridate
             any::stringr
             any::dplyr
