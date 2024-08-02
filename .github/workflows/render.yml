@@ -24,7 +24,6 @@ jobs:
       # https://jasonraimondi.com/posts/install-google-fonts-in-github-workflow/
       - name: Install Google Fonts
         run: |
-          apt install fonts-noto-core
           mv deps/NotoSans* /usr/share/fonts/
           fc-cache -fv
 
@@ -51,6 +50,7 @@ jobs:
           sudo add-apt-repository ppa:c2d4u.team/c2d4u4.0+
           sudo apt update
           sudo apt install libudunits2-dev \
+                           fonts-noto-core \
                            libcurl4-openssl-dev
 
       - uses: r-lib/actions/setup-r-dependencies@v2
