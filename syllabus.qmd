@@ -170,14 +170,14 @@ This class will be primarily discussion based - you are expected to prepare for 
 
 In a discussion class, it is important to both contribute regularly and to not dominate the discussion. The following principles (from https://tll.mit.edu/teaching-resources/inclusive-classroom/discussion-guidelines/) will guide discussions in this class, and adherence will be part of the participation grade.
 
-    - Listen respectfully, without interrupting.
-    - Listen actively and with an ear to understanding others’ views. (Don’t just think about what you are going to say while someone else is talking.)
-    - Criticize ideas, not individuals.
-    - Avoid blame, speculation, and inflammatory language.
-    - Allow everyone the chance to speak.
-    - Avoid assumptions about any member of the class or generalizations about social groups. 
-    - We are accountable for our words and their impact.
-    - Personal information that comes up in the conversation should be kept confidential. 
+  - Listen respectfully, without interrupting.
+  - Listen actively and with an ear to understanding others’ views. (Don’t just think about what you are going to say while someone else is talking.)
+  - Criticize ideas, not individuals.
+  - Avoid blame, speculation, and inflammatory language.
+  - Allow everyone the chance to speak.
+  - Avoid assumptions about any member of the class or generalizations about social groups. 
+  - We are accountable for our words and their impact.
+  - Personal information that comes up in the conversation should be kept confidential. 
 
 ### Papers
 

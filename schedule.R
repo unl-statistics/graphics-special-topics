@@ -123,7 +123,7 @@ class_cal <- plot_Cal %>%
 # class_cal
 
 exam_days <- filter(Cal, category == "Paper Due Date") %>%
-  mutate(topic = c("992 Paper Due", "892 Paper Due", "992 Paper Due", "Final Paper Due (892/992)"),
+  mutate(topic = c("992 Paper #1 Due", "892 Paper #1 Due", "992 Paper #2 Due", "Final Paper Due (892/992)"),
          time = c("12pm", "12pm", "12pm", "12pm"))
 
 class_days <- filter(Cal, category == "Class Day") %>%
