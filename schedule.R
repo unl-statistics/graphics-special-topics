@@ -22,13 +22,16 @@ exam_week <- seq(ymd(20241216), ymd(20241220), by = 1)
 
 
 # Weekday(s) of class
-class_wdays <- c("Tue", "Thu")
+class_wdays <- c("Thu")
 
 not_here_dates <- c(
   ymd(20240902), # Labor Day
   ymd(20241021:20241022), # Fall Break
   c(ymd(20241127:20241130), ymd(20241201)) # Thanksgiving
 )
+
+# Days where class is scheduled outside of normal times
+extra_days <- ymd(20241126)
 
 # You can adjust this as you see fit.
 # Basically: add assignment types (e.g. papers, quizzes).
@@ -69,7 +72,7 @@ Cal <- Cal %>%
   mutate(category = case_when(
     paper ~ "Paper Due Date",
     not_here ~ "UNL holiday",
-    semester & wkdy %in% class_wdays & !not_here & !exam_wk ~ "Class Day",
+    semester & (wkdy %in% class_wdays | date %in% extra_days) & !not_here & !exam_wk ~ "Class Day",
     semester & exam_wk ~ "Finals",
     semester ~ "Semester",
     TRUE ~ "NA"
@@ -128,33 +131,19 @@ class_days <- filter(Cal, category == "Class Day") %>%
   mutate(topic = c(
     "Syllabus, Introduction, Why Graphics?",
     "Grammar of Graphics",
-    "Grammar of Graphics",
-    "Grammar of Graphics",
-    "Modifying the Grammar",
-    "Modifying the Grammar",
     "Modifying the Grammar",
     "Other Grammars",
     "Evaluating Graphics",
-    "Evaluating Graphics",
-    "Graphical Testing",
     "Graphical Testing",
     "Audience Considerations",
-    "Audience Considerations",
-    "Visual Inference",
-    "Visual Inference",
-    "Visual Inference",
-    "Visual Inference",
+    "TBD",
     "Visual Statistics",
-    "High Dimensional Vis",
+    "Visual Inference",
+    "Visual Inference",
     "High Dimensional Vis",
     "Tours",
-    "Tours",
-    "Dimension Reduction",
-    "Dimension Reduction",
     "Dimension Reduction",
     "High Dimensional Vis",
-    "High Dimensional Vis",
-    "Data Art/Infographics",
     "Data Art/Infographics")) %>%
   bind_rows(exam_days) %>%
   arrange(date)
