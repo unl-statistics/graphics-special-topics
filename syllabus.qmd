@@ -162,7 +162,7 @@ This class is  very different from other advanced statistics classes: there will
 
 ### Weekly Writing Assignments
 
-There will be short (1pg-ish) writing assignments that summarize the reading for each week. These assignments are intended to prompt you to reflect on the reading before we discuss items in class. Assignments will be graded primarily for effort and insight.
+There will be short (1-2 page) writing assignments that summarize the reading for each week. These assignments are intended to prompt you to reflect on the reading before we discuss items in class. Assignments will be graded primarily for effort and insight.
 
 ### Participation and Discussion
 
@@ -181,9 +181,11 @@ In a discussion class, it is important to both contribute regularly and to not d
 
 ### Papers
 
-One or more longer (~15-page) papers will be assigned during the course of the semester. Papers must be written using LaTeX, with BibTeX used for citations (it is also acceptable to use Quarto/RMarkdown to generate PDF content, using LaTeX/BibTeX under the hood). I recommend using Zotero + ZoteroConnector to keep track of papers and generate references; be aware that you will often have to fill in additional information that isn't provided by ZoteroConnector (but this is still faster than generating the BibTeX yourself). 
+Two to three longer (~15-page) papers will be assigned during the course of the semester. Papers must be written using LaTeX, with BibTeX used for citations (it is also acceptable to use Quarto/RMarkdown to generate PDF content, using LaTeX/BibTeX under the hood). I recommend using Zotero + ZoteroConnector to keep track of papers and generate references; be aware that you will often have to fill in additional information that isn't provided by ZoteroConnector (but this is still faster than generating the BibTeX yourself). 
 
-If you use graphics generated from code in your paper, you must include the code in a reproducible fashion (e.g. using Quarto/Sweave/Rmarkdown) and it must compile on my machine without modification.  
+If you use graphics generated from code in your paper, you must include the code in a reproducible fashion (e.g. using Quarto/Sweave/Rmarkdown) and it must compile on my machine without modification.
+
+Students taking the class at the 900 level will submit 3 papers (due in late Sept, early Nov, and mid Dec), while students taking the class at the 800 level will submit 2 papers (due mid-Oct and mid Dec). 
 
 ## Expectations
 
@@ -266,13 +268,13 @@ I do not care which format you use for source citations (APA, Chicago, IEEE nume
 ### AI Policy
 AI tools do not have the ability to provide insight into specific problems - they recombine text from other sources, but this often results in vague, bland, and muddled writing. It is unlikely that using AI to provide more than a basic structure/outline to get you started writing will be useful for this class. 
 
-If you use AI tools, you must provide the following:
+If you use AI tools on any assignment in this course, you must provide the following at the time the assignment is submitted:
 
 - an attachment or appendix to your assignment that includes:
 
   - the prompt you provided, including any back-and-forth prompt engineering
   - the AI response(s)
-  - a document showing the difference between the AI response(s) and your final submission (and there should be many, many differences). The `diff` command may be helpful to generate this document.
+  - a document showing the difference between the AI response(s) and your final submission (and there should be many, many differences). The `diff` command (or `latexdiff`) may be helpful to generate this document.
 
 - citations for any claims the AI made which remain in your final submission. As most AI engines do not cite contributing sources, you will need to find sources to support each claim made in your submission. **Sources which cannot be verified and are suspected to be AI hallucinations are cause for an automatic 0% on the assignment.** 
 
