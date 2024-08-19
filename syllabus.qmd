@@ -29,7 +29,7 @@ execute:
 
 
 ```{r setup, include=FALSE}
-# knitr::opts_chunk$set(cache=FALSE, dev='pdf')
+knitr::opts_chunk$set(cache=FALSE, dev='pdf')
 knitr::opts_chunk$set(cache=F,
                       echo = F,
                       message = F, warning = F,
@@ -44,7 +44,7 @@ knitr::opts_chunk$set(
                       if (file.rename(x, x2)) x2 else x
                       }
                   )
-source("schedule.R")
+source("schedule.R") 
 ```
 
 # Course Description
@@ -121,7 +121,7 @@ This schedule is tentative and subject to change. Students are expected to read 
 #| message: false
 #| fig-width: 8
 #| fig-height: 4.5
-class_cal
+class_cal  
 ```
 
 ```{r schedule}
@@ -138,7 +138,7 @@ class_days %>% select(date, topic, time) %>%
   summarize(date = min(date), Date = paste(Date, sep = ",", collapse = ", ")) %>%
   arrange(date) %>%
   select(Date, Time, Topic) %>%
-kableExtra::kable(caption = "Tentative schedule of class topics & project due dates", format = "simple")
+kableExtra::kable(caption = "Tentative schedule of class topics & project due dates", format = "simple") 
 ```
 
 # Course Policies

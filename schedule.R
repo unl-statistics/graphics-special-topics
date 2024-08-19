@@ -132,8 +132,8 @@ class_days <- filter(Cal, category == "Class Day") |>
   mutate(topic = c(
     "Syllabus, Introduction",
     "Grammar of Graphics",
-    "Modifying the Grammar",
-    "Other Grammars",
+    "Implementations of the Grammar",
+    "Extending the Grammar",
     "Evaluating Graphics",
     "Graphical Testing",
     "Graphical Testing",
