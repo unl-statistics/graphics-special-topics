@@ -27,7 +27,7 @@ class_wdays <- c("Thu")
 not_here_dates <- c(
   ymd(20240902), # Labor Day
   ymd(20241021:20241022), # Fall Break
-  c(ymd(20241127:20241130), ymd(20241201)) # Thanksgiving
+  c(ymd(20241127:20241129), ymd(20241129)) # Thanksgiving
 )
 
 # Days where class is scheduled outside of normal times
@@ -36,10 +36,10 @@ extra_days <- ymd(20241126)
 # You can adjust this as you see fit.
 # Basically: add assignment types (e.g. papers, quizzes).
 # My intro class was fairly simple: just exams.
-weekly_papers <- c(ymd(20240829), seq(ymd(20240903), ymd(20241210), by = 7))
-weekly_papers[weekly_papers == ymd(20241022)] <- ymd(20241024)
+weekly_papers <- c(ymd(20240829), seq(ymd(20240904), ymd(20241211), by = 7))
+weekly_papers[weekly_papers==ymd(20241127)] <- ymd(20241126)
 
-paper_due_dates <- c(ymd(20240927), ymd(20241016), ymd(20241106), ymd(20241213))
+paper_due_dates <- c(ymd(20240927), ymd(20241018), ymd(20241108), ymd(20241213))
 
 
 # Custom function for treating the first day of the month as the first week
@@ -103,7 +103,7 @@ plot_Cal <-  Cal |>
                     "black", "white"))
 
 class_cal <- plot_Cal |>
-  ggplot(.,aes(wkdy, week)) +
+  ggplot(aes(wkdy, week)) +
   theme_bw() +
   theme(panel.grid.major.x = element_blank(),
         legend.position = c(1, 0), legend.justification = c(1,0), legend.direction = "vertical", legend.title = element_blank(),

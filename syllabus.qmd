@@ -274,7 +274,7 @@ If you use AI tools, you must provide the following:
   - the AI response(s)
   - a document showing the difference between the AI response(s) and your final submission (and there should be many, many differences). The `diff` command may be helpful to generate this document.
 
-- citations for any claims the AI makes which remain in your final submission. As most AI engines do not cite contributing sources, this is likely to require considerable extra work that likely exceeds the work to write and cite everything from scratch
+- citations for any claims the AI made which remain in your final submission. As most AI engines do not cite contributing sources, you will need to find sources to support each claim made in your submission. **Sources which cannot be verified and are suspected to be AI hallucinations are cause for an automatic 0% on the assignment.** 
 
 - a citation to the AI engine used and its specific version, for reproducibility purposes. 
 
