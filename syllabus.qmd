@@ -21,8 +21,8 @@ email: "[susan.vanderplas@unl.edu](mailto:susan.vanderplas@unl.edu?subject=Stat%
 web: "srvanderplas.github.io"
 officehours: "\\href{https://calendly.com/drvanderplas/officehours}{Schedule here}"
 office: "Hardin 343D"
-classroom: "TBD"
-classhours: "TBD"
+classroom: "Hardin 354A"
+classhours: "Thursday 2-4:45"
 execute: 
   cache: true
 ---
@@ -88,9 +88,9 @@ Weekly Writing Assignments | 30%
 Participation and Discussion | 20%
 Papers | 50%
 
-Missing more than 4 classes without *prior* instructor permission will result in a reduced grade beyond the 20% allocated to class participation. 
+Missing more than 2 classes *without prior instructor permission* will result in a reduced grade beyond the 20% allocated to class participation. Missing more than 3 classes *without prior permission* will result in a failing grade in the course. 
 
-The 892 and 992 versions of this class will have different assignments and papers, but the overall grading scheme will be similar. In general, students taking the 992 course will be expected to discuss concepts at a higher level (this does not necessarily mean writing more text) and will write more papers. 
+The 892 and 992 versions of this class will have different assignments and papers, but the overall grading scheme will be similar. In general, students taking the 992 course will be expected to discuss concepts at a higher level (this does not necessarily mean writing more text) and will write one additional paper. 
 
 ---
 
@@ -181,7 +181,7 @@ In a discussion class, it is important to both contribute regularly and to not d
 
 ### Papers
 
-Two to three longer (~15-page) papers will be assigned during the course of the semester. Papers must be written using LaTeX, with BibTeX used for citations (it is also acceptable to use Quarto/RMarkdown to generate PDF content, using LaTeX/BibTeX under the hood). I recommend using Zotero + ZoteroConnector to keep track of papers and generate references; be aware that you will often have to fill in additional information that isn't provided by ZoteroConnector (but this is still faster than generating the BibTeX yourself). 
+Two to three longer papers (15 pages excluding figures/references) will be assigned during the course of the semester. Papers must be written using LaTeX or Markdown, with BibTeX or pandoc citations used for citations. I recommend using Zotero + ZoteroConnector to keep track of papers and generate references; be aware that you will often have to fill in additional information that isn't provided by ZoteroConnector (but this is still faster than generating the BibTeX yourself). 
 
 If you use graphics generated from code in your paper, you must include the code in a reproducible fashion (e.g. using Quarto/Sweave/Rmarkdown) and it must compile on my machine without modification.
 
