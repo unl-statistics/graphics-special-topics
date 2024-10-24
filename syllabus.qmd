@@ -21,15 +21,15 @@ email: "[susan.vanderplas@unl.edu](mailto:susan.vanderplas@unl.edu?subject=Stat%
 web: "srvanderplas.github.io"
 officehours: "\\href{https://calendly.com/drvanderplas/officehours}{Schedule here}"
 office: "Hardin 343D"
-classroom: "TBD"
-classhours: "TBD"
+classroom: "Hardin 354A"
+classhours: "Thursday 2-4:45"
 execute: 
   cache: true
 ---
 
 
 ```{r setup, include=FALSE}
-# knitr::opts_chunk$set(cache=FALSE, dev='pdf')
+knitr::opts_chunk$set(cache=FALSE, dev='pdf')
 knitr::opts_chunk$set(cache=F,
                       echo = F,
                       message = F, warning = F,
@@ -44,7 +44,7 @@ knitr::opts_chunk$set(
                       if (file.rename(x, x2)) x2 else x
                       }
                   )
-source("schedule.R")
+source("schedule.R") 
 ```
 
 # Course Description
@@ -88,9 +88,9 @@ Weekly Writing Assignments | 30%
 Participation and Discussion | 20%
 Papers | 50%
 
-Missing more than 4 classes without *prior* instructor permission will result in a reduced grade beyond the 20% allocated to class participation. 
+Missing more than 2 classes *without prior instructor permission* will result in a reduced grade beyond the 20% allocated to class participation. Missing more than 3 classes *without prior permission* will result in a failing grade in the course. 
 
-The 892 and 992 versions of this class will have different assignments and papers, but the overall grading scheme will be similar. In general, students taking the 992 course will be expected to discuss concepts at a higher level (this does not necessarily mean writing more text) and will write more papers. 
+The 892 and 992 versions of this class will have different assignments and papers, but the overall grading scheme will be similar. In general, students taking the 992 course will be expected to discuss concepts at a higher level (this does not necessarily mean writing more text) and will write one additional paper. 
 
 ---
 
@@ -121,7 +121,7 @@ This schedule is tentative and subject to change. Students are expected to read 
 #| message: false
 #| fig-width: 8
 #| fig-height: 4.5
-class_cal
+class_cal  
 ```
 
 ```{r schedule}
@@ -138,7 +138,7 @@ class_days %>% select(date, topic, time) %>%
   summarize(date = min(date), Date = paste(Date, sep = ",", collapse = ", ")) %>%
   arrange(date) %>%
   select(Date, Time, Topic) %>%
-kableExtra::kable(caption = "Tentative schedule of class topics & project due dates", format = "simple")
+kableExtra::kable(caption = "Tentative schedule of class topics & project due dates", format = "simple") 
 ```
 
 # Course Policies
@@ -162,7 +162,7 @@ This class is  very different from other advanced statistics classes: there will
 
 ### Weekly Writing Assignments
 
-There will be short (1pg-ish) writing assignments that summarize the reading for each week. These assignments are intended to prompt you to reflect on the reading before we discuss items in class. Assignments will be graded primarily for effort and insight.
+There will be short (1-2 page) writing assignments that summarize the reading for each week. These assignments are intended to prompt you to reflect on the reading before we discuss items in class. Assignments will be graded primarily for effort and insight.
 
 ### Participation and Discussion
 
@@ -181,9 +181,11 @@ In a discussion class, it is important to both contribute regularly and to not d
 
 ### Papers
 
-One or more longer (~15-page) papers will be assigned during the course of the semester. Papers must be written using LaTeX, with BibTeX used for citations (it is also acceptable to use Quarto/RMarkdown to generate PDF content, using LaTeX/BibTeX under the hood). I recommend using Zotero + ZoteroConnector to keep track of papers and generate references; be aware that you will often have to fill in additional information that isn't provided by ZoteroConnector (but this is still faster than generating the BibTeX yourself). 
+Two to three longer papers (15 pages excluding figures/references) will be assigned during the course of the semester. Papers must be written using LaTeX or Markdown, with BibTeX or pandoc citations used for citations. I recommend using Zotero + ZoteroConnector to keep track of papers and generate references; be aware that you will often have to fill in additional information that isn't provided by ZoteroConnector (but this is still faster than generating the BibTeX yourself). 
 
-If you use graphics generated from code in your paper, you must include the code in a reproducible fashion (e.g. using Quarto/Sweave/Rmarkdown) and it must compile on my machine without modification.  
+If you use graphics generated from code in your paper, you must include the code in a reproducible fashion (e.g. using Quarto/Sweave/Rmarkdown) and it must compile on my machine without modification.
+
+Students taking the class at the 900 level will submit 3 papers (due in late Sept, early Nov, and mid Dec), while students taking the class at the 800 level will submit 2 papers (due mid-Oct and mid Dec). 
 
 ## Expectations
 
@@ -266,15 +268,15 @@ I do not care which format you use for source citations (APA, Chicago, IEEE nume
 ### AI Policy
 AI tools do not have the ability to provide insight into specific problems - they recombine text from other sources, but this often results in vague, bland, and muddled writing. It is unlikely that using AI to provide more than a basic structure/outline to get you started writing will be useful for this class. 
 
-If you use AI tools, you must provide the following:
+If you use AI tools on any assignment in this course, you must provide the following at the time the assignment is submitted:
 
 - an attachment or appendix to your assignment that includes:
 
   - the prompt you provided, including any back-and-forth prompt engineering
   - the AI response(s)
-  - a document showing the difference between the AI response(s) and your final submission (and there should be many, many differences). The `diff` command may be helpful to generate this document.
+  - a document showing the difference between the AI response(s) and your final submission (and there should be many, many differences). The `diff` command (or `latexdiff`) may be helpful to generate this document.
 
-- citations for any claims the AI makes which remain in your final submission. As most AI engines do not cite contributing sources, this is likely to require considerable extra work that likely exceeds the work to write and cite everything from scratch
+- citations for any claims the AI made which remain in your final submission. As most AI engines do not cite contributing sources, you will need to find sources to support each claim made in your submission. **Sources which cannot be verified and are suspected to be AI hallucinations are cause for an automatic 0% on the assignment.** 
 
 - a citation to the AI engine used and its specific version, for reproducibility purposes. 
 

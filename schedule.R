@@ -27,18 +27,19 @@ class_wdays <- c("Thu")
 not_here_dates <- c(
   ymd(20240902), # Labor Day
   ymd(20241021:20241022), # Fall Break
-  c(ymd(20241127:20241130), ymd(20241201)) # Thanksgiving
+  c(ymd(20241127:20241129), ymd(20241129)) # Thanksgiving
 )
 
-extra_dates <- c(ymd(20241126)) # Thanksgiving Tuesday
+# Days where class is scheduled outside of normal times
+extra_days <- ymd(20241126)
 
 # You can adjust this as you see fit.
 # Basically: add assignment types (e.g. papers, quizzes).
 # My intro class was fairly simple: just exams.
-weekly_papers <- c(ymd(20240829), seq(ymd(20240903), ymd(20241210), by = 7))
-weekly_papers[weekly_papers == ymd(20241022)] <- ymd(20241024)
+weekly_papers <- c(ymd(20240829), seq(ymd(20240904), ymd(20241211), by = 7))
+weekly_papers[weekly_papers==ymd(20241127)] <- ymd(20241126)
 
-paper_due_dates <- c(ymd(20240927), ymd(20241016), ymd(20241106), ymd(20241213))
+paper_due_dates <- c(ymd(20240927), ymd(20241018), ymd(20241108), ymd(20241213))
 
 
 # Custom function for treating the first day of the month as the first week
@@ -51,7 +52,7 @@ wom <- function(date) {
 # Create a data frame of dates, assign to Cal
 Cal <- tibble(date = seq(floor_date(sem_boundary[1], "month"),
                          ceiling_date(sem_boundary[2], "month") - days(1),
-                         by=1))  %>%
+                         by=1))  |>
   mutate(mon = lubridate::month(date, label=T, abbr=F), # get month label
          wkdy = weekdays(date, abbreviate=T), # get weekday label
          wkdy = fct_relevel(wkdy, "Sun", "Mon", "Tue", "Wed", "Thu","Fri","Sat"), # make sure Sunday comes first
@@ -67,11 +68,12 @@ Cal <- tibble(date = seq(floor_date(sem_boundary[1], "month"),
 # Create a category variable, for filling.
 # I can probably make this a case_when(), but this will work.
 
-Cal <- Cal %>%
+Cal <- Cal |>
   mutate(category = case_when(
     paper ~ "Paper Due Date",
     not_here ~ "UNL holiday",
-    semester & (wkdy %in% class_wdays | date %in% extra_dates) & !not_here & !exam_wk ~ "Class Day",
+    semester & (wkdy %in% class_wdays | date %in% extra_days) &
+      !not_here & !exam_wk ~ "Class Day",
     semester & exam_wk ~ "Finals",
     semester ~ "Semester",
     TRUE ~ "NA"
@@ -91,17 +93,17 @@ my_scales <- tribble(
   "Paper Due Date", "orange",
   "Finals",         "grey")
 
-fill_scale <- c(my_scales$fill) %>% magrittr::set_names(my_scales$category)
+fill_scale <- c(my_scales$fill) |> magrittr::set_names(my_scales$category)
 
-plot_Cal <-  Cal %>%
-  left_join(my_scales) %>%
+plot_Cal <-  Cal |>
+  left_join(my_scales) |>
   mutate(
     shape = if_else(assignment, "Assignment Due", NA_character_),
     color = if_else(semester & (!not_here),
                     "black", "white"))
 
-class_cal <- plot_Cal %>%
-  ggplot(.,aes(wkdy, week)) +
+class_cal <- plot_Cal |>
+  ggplot(aes(wkdy, week)) +
   theme_bw() +
   theme(panel.grid.major.x = element_blank(),
         legend.position = c(1, 0), legend.justification = c(1,0), legend.direction = "vertical", legend.title = element_blank(),
@@ -122,28 +124,28 @@ class_cal <- plot_Cal %>%
                              "Assignment Due", "Paper Due Date", "Finals"))
 # class_cal
 
-exam_days <- filter(Cal, category == "Paper Due Date") %>%
+exam_days <- filter(Cal, category == "Paper Due Date") |>
   mutate(topic = c("992 Paper #1 Due", "892 Paper #1 Due", "992 Paper #2 Due", "Final Paper Due (892/992)"),
          time = c("12pm", "12pm", "12pm", "12pm"))
 
-class_days <- filter(Cal, category == "Class Day") %>%
+class_days <- filter(Cal, category == "Class Day") |>
   mutate(topic = c(
     "Syllabus, Introduction",
     "Grammar of Graphics",
-    "Modifying the Grammar",
-    "Other Grammars",
+    "Implementations of the Grammar",
+    "Extending the Grammar",
     "Evaluating Graphics",
     "Graphical Testing",
     "Graphical Testing",
     "Audience Considerations",
-    "TBD",
+    "Visual Statistics",
     "Visual Inference",
     "Visual Inference",
     "High Dimensional Vis",
     "Tours",
     "Dimension Reduction",
     "High Dimensional Vis",
-    "Data Art/Infographics")) %>%
-  bind_rows(exam_days) %>%
+    "Data Art/Infographics")) |>
+  bind_rows(exam_days) |>
   arrange(date)
 
