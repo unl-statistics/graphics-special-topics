@@ -1,0 +1,60 @@
+---
+title: "lineups"
+format:
+  typst:
+    columns: 1
+---
+
+# Example 1: Gentoo Bill Rank Correlation
+```{r}
+#| fig-width: 7
+#| fig-height: 7
+#| dpi: 300
+#| out-width: "100%"
+#| echo: false
+#| warning: false
+library(nullabor)
+library(vinference)
+library(palmerpenguins)
+library(dplyr)
+library(ggplot2)
+data(penguins)
+
+penguin_ranks <- penguins |>
+  filter(species == "Gentoo") |>
+  mutate(across(3:6, rank, .names="rank_{.col}")) 
+
+set.seed(4209483)
+answers <- sample(1:20, 10, replace = T)
+rank_lineup <- purrr::map2(1:10, answers,  ~lineup(null_permute('rank_bill_depth_mm'), penguin_ranks, pos = .y))
+
+knitr::kable(cbind("Plot" = 1:10, "Answer" = answers))
+
+purrr::map2(1:10, rank_lineup, ~ggplot(.y, aes(x = rank_bill_depth_mm, y = rank_bill_length_mm)) + geom_point() + facet_wrap(~.sample) + ggtitle(paste("Plot", .x, sep = "")))
+```
+```{=typst}
+#pagebreak()
+```
+
+# Example 2: Random Bill Correlation -- sampled data
+
+```{r}
+#| fig-width: 7
+#| fig-height: 7
+#| dpi: 300
+#| out-width: "100%"
+#| echo: false
+#| warning: false
+
+set.seed(42034394)
+answers <- sample(1:20, 10, replace = T)
+penguin_data <- purrr::map(1:10, ~slice_sample(penguins, by = species, n = 20, replace = F))
+subsample_lineup <- purrr::map2(penguin_data, answers,  ~lineup(null_permute('bill_depth_mm'), .x, pos = .y))
+
+knitr::kable(cbind("Plot" = 1:10, "Answer" = answers))
+
+purrr::map2(1:10, subsample_lineup, ~ggplot(.y, aes(x = bill_depth_mm, y = bill_length_mm)) + geom_point() + facet_wrap(~.sample) + ggtitle(paste("Plot", .x, sep = "")))
+```
+```
+
+
