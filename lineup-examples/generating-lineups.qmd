@@ -55,6 +55,5 @@ knitr::kable(cbind("Plot" = 1:10, "Answer" = answers))
 
 purrr::map2(1:10, subsample_lineup, ~ggplot(.y, aes(x = bill_depth_mm, y = bill_length_mm)) + geom_point() + facet_wrap(~.sample) + ggtitle(paste("Plot", .x, sep = "")))
 ```
-```
 
 
